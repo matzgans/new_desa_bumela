@@ -1,6 +1,8 @@
 <x-landing-layout>
     <div class="mt-28 text-center" data-aos="zoom-in">
-        <h1 class="text-darken text-2xl font-semibold">Penyuratan Desa <span class="text-gray-600">Katialada</span>
+        <h1 class="text-darken text-2xl font-semibold">Penyuratan Desa <span
+                class="text-gray-600">{{ config('app.name') }}
+            </span>
         </h1>
         <p class="my-5 text-gray-500 lg:px-96">
             {{ $content->penyuratan }}
@@ -169,20 +171,24 @@
     <div class="mx-20" id="default-tab-content">
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-default" role="tabpanel"
             aria-labelledby="profile-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
 
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-beda-tanggal" role="tabpanel"
             aria-labelledby="profile-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
                     @csrf
@@ -241,18 +247,20 @@
                         </div>
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-beda-nama" role="tabpanel"
             aria-labelledby="profile-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
                     @csrf
@@ -302,18 +310,20 @@
                         </div>
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-kelakukan-baik" role="tabpanel"
             aria-labelledby="dashboard-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -361,18 +371,20 @@
                         </div>
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-tidak-mampu" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -425,18 +437,20 @@
 
 
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-domisili" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -521,18 +535,20 @@
                             id="place" name="NIK" type="place" placeholder="" />
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-kematian" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
 
             <div class="my-10">
                 <div class="hidden">
@@ -694,7 +710,8 @@
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="alamat_ayah" name="address_ayah" type="text"
-                                placeholder="Desa Katialada. Kecamatan Kwandang" />
+                                placeholder="Desa {{ config('app.name') }}
+. Kecamatan Kwandang" />
                         </div>
                         <div>
                             <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
@@ -725,7 +742,8 @@
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="alamat_ibu" name="address_ibu" type="text"
-                                placeholder="Desa Katialada Kecamatan Kwandang" />
+                                placeholder="Desa {{ config('app.name') }}
+ Kecamatan Kwandang" />
                         </div>
 
                         <div>
@@ -768,7 +786,8 @@
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="alamat_saksi1" name="address_saksi1" type="text"
-                                placeholder="Desa Katialada Kec. Bilato" />
+                                placeholder="Desa {{ config('app.name') }}
+ Kec. Bilato" />
                         </div>
 
                         <div>
@@ -789,7 +808,8 @@
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="ttl_saksi2" name="birth_saksi2" type="text"
-                                placeholder="Katialada, 17 Agustus 2004" />
+                                placeholder="{{ config('app.name') }}
+, 17 Agustus 2004" />
                         </div>
 
                         <div>
@@ -811,23 +831,26 @@
                             <input
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                                 id="alamat_saksi2" name="address_saksi2" type="text"
-                                placeholder="Desa Katialada Kec. Bilato" />
+                                placeholder="Desa {{ config('app.name') }}
+ Kec. Bilato" />
                         </div>
 
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-hilang" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -890,18 +913,20 @@
 
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-usaha" role="tabpanel"
             aria-labelledby="contacts-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
 
             <div class="my-10">
                 <form method="POST" action="{{ route('document.store') }}">
@@ -999,18 +1024,20 @@
                             placeholder="Usaha  Dagang Pakaian Jadi" />
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-kelahiran" role="tabpanel"
             aria-labelledby="profile-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
             <div class="my-10">
                 <form class="mx-20" method="POST" action="{{ route('document.store') }}">
                     @csrf
@@ -1040,7 +1067,8 @@
                                 <label class="block text-sm font-medium text-gray-700">Di:</label>
                                 <input class="mt-1 w-full rounded-md border p-2 focus:ring focus:ring-blue-500"
                                     name="place" type="text"
-                                    placeholder="Desa Katialada Kec. Bilato, Kabupaten Gorontalo Utara" />
+                                    placeholder="Desa {{ config('app.name') }}
+ Kec. Bilato, Kabupaten Gorontalo Utara" />
                             </div>
                         </div>
 
@@ -1069,7 +1097,8 @@
                             <label class="block text-sm font-medium text-gray-700">Alamat:</label>
                             <input class="mt-1 w-full rounded-md border p-2 focus:ring focus:ring-blue-500"
                                 name="address" type="text"
-                                placeholder="Desa Katialada, Kecamatan Kwandang, Kabupaten Gorontalo Utara" />
+                                placeholder="Desa {{ config('app.name') }}
+, Kecamatan Kwandang, Kabupaten Gorontalo Utara" />
                         </div>
 
                         <div class="mb-2">
@@ -1079,18 +1108,20 @@
                         </div>
                     </div>
                     <button
-                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
+                        class="w-full rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                         type="submit">Submit</button>
                 </form>
             </div>
         </div>
         <div class="hidden rounded-lg bg-gray-50 p-4 dark:bg-gray-800" id="ket-ekonomi-lemah" role="tabpanel"
             aria-labelledby="profile-tab">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di Katialada dimulai dengan pengguna
+            <p class="text-sm text-gray-500 dark:text-gray-400">Fitur penyuratan di {{ config('app.name') }}
+                dimulai dengan pengguna
                 memilih jenis surat yang diinginkan dari daftar tersedia. Setelah itu, pengguna mengisi formulir dengan
                 data yang diminta, sebelum mengirimkan permohonan surat. Setelah proses verifikasi oleh pihak
                 administrasi desa, Pengguna kemudian datang ke kantor administrasi desa untung mengambil surat yang
-                telah diverifikasi oleh admin desa Katialada</p>
+                telah diverifikasi oleh admin desa {{ config('app.name') }}
+            </p>
             <div class="my-10">
                 <form class="mx-20" method="POST" action="{{ route('document.store') }}">
                     @csrf
@@ -1146,7 +1177,8 @@
                         <label class="block text-sm font-medium text-gray-700">Alamat:</label>
                         <input class="mt-1 w-full rounded-md border p-2 focus:ring focus:ring-blue-500" name="address"
                             type="text" required
-                            placeholder="Desa Katialada, Kecamatan Kwandang, Kabupaten Gorontalo Utara" />
+                            placeholder="Desa {{ config('app.name') }}
+, Kecamatan Kwandang, Kabupaten Gorontalo Utara" />
                     </div>
 
                     <h2 class="mb-4 text-lg font-semibold">Orang Tua/Wali dari Calon Mahasiswa Baru:</h2>

@@ -116,17 +116,7 @@
 
     <div class="container">
         <!-- Header Section -->
-        <div class="header">
-            <div class="logo">
-                <img src="../public/landing/images/logo-gorut.png" alt="Logo gorut">
-            </div>
-            <div class="header-text">
-                <h2>Pemerintah Kabupaten Gorontalo Utara</h2>
-                <h2>Kecamatan Kwandang</h2>
-                <h2>Desa Katialada</h2>
-                <p>Jl. Pelabuhan Kwandang Desa Katialada Kecamatan Kwandang, Kode Pos 96252</p>
-            </div>
-        </div>
+        <x-pdf-header />
         <hr>
         <div class="content">
             <h3>SURAT KETERANGAN
@@ -150,8 +140,8 @@
                     <tr>
                         <td style="padding-right: 50px">Alamat</td>
                         <td>:</td>
-                        <td>Desa Katialada Kecamatan Kwandang
-                            Kab. Gorontalo Utara </td>
+                        <td>Desa Bumela Kecamatan Bilato
+                            Kab. Gorontalo </td>
                     </tr>
 
                 </table>
@@ -242,7 +232,7 @@
                         <tr>
                             <td>Dikeluarkan di</td>
                             <td>:</td>
-                            <td>Katialada</td>
+                            <td>{{ config('app.name') }}</td>
                         </tr>
                         <tr>
                             <td>Pada Tanggal</td>
@@ -253,13 +243,13 @@
 
                     @if ($tandatangan === 'kades')
                         <div class="text-table">
-                            <p class="kepala-desa">Kepala Desa Katialada</p>
+                            <p class="kepala-desa">Kepala Desa {{ config('app.name') }}</p>
                             <p class="nama-kepala-desa">{{ ucfirst($kepala_desa) }}</p>
                             {{-- <p class="nip">NIP: {{ $nip }}</p> --}}
                         </div>
                     @else
                         <div class="text-table">
-                            <p class="kepala-desa">A.n Kepala Desa Katialada</p>
+                            <p class="kepala-desa">A.n Kepala Desa {{ config('app.name') }}</p>
                             <p class="nama-kepala-desa">{{ ucfirst($sekretaris_desa) }}</p>
                             {{-- <p class="nip">NIP: {{ $nip }}</p> --}}
                         </div>

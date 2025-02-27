@@ -113,11 +113,20 @@ class DocumentKelBaikController extends Controller
 
 
         if ($document->no_surat) {
-            # code...
             $data = json_decode($document->data, true);
-            $data['kepala_desa'] = $kepala_desa->staff_name;
-            $data['nip'] = $kepala_desa->nip;
-            $data['sekretaris_desa'] = $sekretaris_desa->staff_name;
+            if ($tandatangan == "kades") {
+                # code...
+                $data['kepala_desa'] = $kepala_desa->staff_name;
+                $data['kepala_desa_position'] = $kepala_desa->position;
+                $data['nip'] = $kepala_desa->nip;
+            } else {
+                $data['kepala_desa'] = $kepala_desa->staff_name;
+                $data['kepala_desa_position'] = $kepala_desa->position;
+                $data['nip'] = $kepala_desa->nip;
+                $data['sekretaris_desa'] = $sekretaris_desa->staff_name;
+                $data['sekretaris_desa_position'] = $sekretaris_desa->position;
+            }
+            # code...
             $data['tandatangan'] = $tandatangan;
             $pdf = Pdf::loadView('pdf.surat-keterangan-kelbaik', $data);
             $fileName = 'surat_keterangan_kelbaik_' . htmlspecialchars($data['name']) . '.pdf';

@@ -1,41 +1,46 @@
 <x-landing-layout>
     {{-- data --}}
 
-    <div data-aos="zoom-in" class="mt-28 text-center">
-        <h1 class="text-darken text-2xl font-semibold ">Data Desa <span class="text-gray-600">Katialada</span></h1>
-        <p class="text-gray-500 my-5 lg:px-96">
-            {{ $content->deskripsi_data_desa }} 
+    <div class="mt-28 text-center" data-aos="zoom-in">
+        <h1 class="text-darken text-2xl font-semibold">Data Desa <span class="text-gray-600">{{ config('app.name') }}
+            </span></h1>
+        <p class="my-5 text-gray-500 lg:px-96">
+            {{ $content->deskripsi_data_desa }}
         </p>
     </div>
 
-    <div class="flex flex-wrap gap-4 text-center justify-center">
+    <div class="flex flex-wrap justify-center gap-4 text-center">
         {{-- <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div id="data-penduduk">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Jumlah penduduk Desa Katialada memberikan
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Jumlah penduduk Desa {{ config('app.name') }}
+ memberikan
                     gambaran tentang potensi sumber daya manusia yang dapat dioptimalkan untuk pembangunan desa. Kami
                     menyediakan informasi terbaru dan akurat mengenai demografi penduduk.
                 </p>
             </div>
         </div> --}}
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
             <div id="data-transportasi">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Infrastruktur transportasi di Desa Katialada
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Infrastruktur transportasi di Desa
+                    {{ config('app.name') }}
+
                     memainkan peran penting dalam mendukung mobilitas masyarakat dan perekonomian desa. Informasi ini
                     mencakup ketersediaan sarana transportasi serta aksesibilitas desa.
                 </p>
             </div>
         </div>
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
             <div id="data-peternakan">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Peternakan di Desa Katialada mencerminkan
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Peternakan di Desa {{ config('app.name') }}
+                    mencerminkan
                     potensi ekonomi yang kuat, dengan data mengenai jenis hewan ternak yang dikelola oleh warga desa.
                     Informasi ini penting untuk mendukung pengembangan sektor pertanian dan peternakan.
                 </p>
@@ -43,11 +48,12 @@
         </div>
 
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
             <div id="gender-chart">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Peternakan di Desa Katialada mencerminkan
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Peternakan di Desa {{ config('app.name') }}
+                    mencerminkan
                     potensi ekonomi yang kuat, dengan data mengenai jenis hewan ternak yang dikelola oleh warga desa.
                     Informasi ini penting untuk mendukung pengembangan sektor pertanian dan peternakan.
                 </p>
@@ -55,11 +61,12 @@
         </div>
 
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
             <div id="status-chart">
             </div>
             <div class="p-5">
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Peternakan di Desa Katialada mencerminkan
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Peternakan di Desa {{ config('app.name') }}
+                    mencerminkan
                     potensi ekonomi yang kuat, dengan data mengenai jenis hewan ternak yang dikelola oleh warga desa.
                     Informasi ini penting untuk mendukung pengembangan sektor pertanian dan peternakan.
                 </p>
@@ -70,7 +77,7 @@
 
     </div>
 
-    <div class="flex flex-wrap gap-4 text-center justify-center mt-10">
+    <div class="mt-10 flex flex-wrap justify-center gap-4 text-center">
         {{-- <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div id="data-sarana">
             </div>
@@ -81,12 +88,13 @@
             </div>
         </div> --}}
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
             <div id="kondisi-rumah">
             </div>
             <div class="p-5">
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Data mengenai kondisi rumah tangga di Desa
-                    Katialada memberikan gambaran mengenai taraf hidup masyarakat dan kualitas infrastruktur perumahan
+                    {{ config('app.name') }}
+                    memberikan gambaran mengenai taraf hidup masyarakat dan kualitas infrastruktur perumahan
                     yang tersedia</p>
             </div>
         </div>
@@ -109,12 +117,12 @@
         id="data-pencaharian">
     </div> --}}
 
-    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+    <div class="mx-10 mb-8 mt-10 rounded-lg border border-gray-200 bg-white shadow-sm md:mb-12 md:grid-cols-2 lg:mx-52 dark:border-gray-700 dark:bg-gray-800"
         id="data-pendidikan">
 
     </div>
 
-    <div class=" mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800 mx-10 lg:mx-52 mt-10"
+    <div class="mx-10 mb-8 mt-10 rounded-lg border border-gray-200 bg-white shadow-sm md:mb-12 md:grid-cols-2 lg:mx-52 dark:border-gray-700 dark:bg-gray-800"
         id="data-usaha">
     </div>
 

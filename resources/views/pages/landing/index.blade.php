@@ -8,20 +8,20 @@
                     <!-- Image -->
                     {{-- <img class="block h-1/2 w-full object-contain md:h-full md:w-1/2 md:object-cover"
                         src="{{ asset('landing/images/kepala-desa.png') }}" alt="..."> --}}
-                    @if ($kepala_desa->staff_photo == null)
+                    @if ($kepala_desa->staff_photo == 'kepala-desa.png')
                         <img class="block h-1/2 w-full object-contain md:h-full md:w-1/2 md:object-cover"
-                            src="{{ asset('structure/staff_profile/' . $kepala_desa->staff_photo) }}" alt="Kepala Desa">
+                            src="{{ asset('landing/images/kepala-desa.png') }}" alt="Kepala Desa">
                     @else
                         <img class="block h-1/2 w-full object-contain md:h-full md:w-1/2 md:object-cover"
                             src="{{ asset('structure/staff_profile/' . $kepala_desa->staff_photo) }}" alt="Kepala Desa">
                     @endif
 
-                        
+
                     <!-- Text Content -->
                     <div class="w-full bg-gray-200/50 p-4 md:w-1/2 md:p-8">
                         <h1
                             class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl">
-                            Selamat Datang Di Website Resmi Desa Katialada
+                            Selamat Datang Di Website Resmi Desa {{ config('app.name') }}
                         </h1>
                         <p class="mb-6 text-justify text-sm font-normal text-black md:text-lg lg:text-xl">
                             {{ $content->sambutan_pertama }}
@@ -118,9 +118,9 @@
             <!-- Image Section -->
             <div class="w-full md:w-1/3">
                 {{-- {{ $kepala_desa }} --}}
-                @if ($kepala_desa->staff_photo == null)
+                @if ($kepala_desa->staff_photo == 'kepala-desa.png')
                     <img class="w-full rounded-lg object-cover shadow-lg"
-                        src="{{ asset('structure/staff_profile/' . $kepala_desa->staff_photo) }}" alt="Kepala Desa">
+                        src="{{ asset('landing/images/' . $kepala_desa->staff_photo) }}" alt="Kepala Desa">
                 @else
                     <img class="w-full rounded-lg object-cover shadow-lg"
                         src="{{ asset('structure/staff_profile/' . $kepala_desa->staff_photo) }}" alt="Kepala Desa">
@@ -142,7 +142,8 @@
                     @foreach ($currentVillageHead as $head)
                         <div class="font-script text-2xl text-gray-800"> {{ $head->staff_name }}
                         </div>
-                        <div class="text-sm font-semibold uppercase tracking-wider text-gray-600">KEPALA DESA Katialada
+                        <div class="text-sm font-semibold uppercase tracking-wider text-gray-600">KEPALA DESA
+                            {{ config('app.name') }}
                         </div>
                     @endforeach
                 </div>
@@ -155,7 +156,7 @@
     <div class="bg-black px-20 pb-20 pt-5">
         <div class="mt-16 text-center" data-aos="zoom-in">
             <h1 class="text-darken text-2xl font-semibold text-white">Data Desa <span
-                    class="text-white">Katialada</span>
+                    class="text-white">{{ config('app.name') }}</span>
             </h1>
             <p class="my-5 text-gray-100 lg:px-96">
                 {{ $content->deskripsi_data_desa }}
@@ -264,7 +265,8 @@
     <div class="mt-16 text-center" data-aos="zoom-in">
         <h1 class="text-darken text-2xl font-semibold">SOTK</h1>
         <p class="my-5 text-gray-500 lg:px-96">
-            Struktur Organisasi dan Tata Kerja Pemerintah Desa Katialada kecamatan Kwandang, Kabupaten Gorontalo Utara
+            Struktur Organisasi dan Tata Kerja Pemerintah Desa {{ config('app.name') }} kecamatan Kwandang, Kabupaten
+            Gorontalo Utara
             Utara, Gorontalo, Indonesia.
         </p>
 
@@ -275,7 +277,9 @@
                 <div
                     class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
                     <img class="h-96 w-full rounded-t-lg object-cover"
-                        src="{{ asset('structure/staff_profile/' . $head->staff_photo) }}" alt="" />
+                        src="{{ asset($head->staff_photo === 'kepala-desa.png' ? 'landing/images/kepala-desa.png' : 'structure/staff_profile/' . $head->staff_photo) }}"
+                        alt="Foto Kepala Desa" />
+
                     <div class="p-5">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {{ $head->staff_name }}
@@ -284,6 +288,7 @@
                     </div>
                 </div>
             @endforeach
+
 
             <!-- Karyawan Lainnya Card -->
             @foreach ($employees as $employee)
@@ -410,10 +415,11 @@
 
 
     <div class="mt-16 text-center" data-aos="zoom-in">
-        <h1 class="text-darken text-2xl font-semibold">Galery Desa <span class="text-black">Katialada</span></h1>
+        <h1 class="text-darken text-2xl font-semibold">Galery Desa <span
+                class="text-black">{{ config('app.name') }}</span></h1>
         <p class="my-5 text-gray-500 lg:px-96">Galeri ini juga menampilkan momen-momen penting, seperti tradisi budaya,
             aktivitas masyarakat, dan pemandangan desa yang memikat. Jelajahi lebih dalam dan temukan keunikan Desa
-            Katialada yang tak terlupakan!
+            {{ config('app.name') }} yang tak terlupakan!
         </p>
     </div>
 
@@ -432,7 +438,8 @@
 
     {{-- lokasi --}}
     <div class="mt-16 text-center" data-aos="zoom-in">
-        <h1 class="text-darken text-2xl font-semibold">Lokasi Desa <span class="text-black">Katialada</span></h1>
+        <h1 class="text-darken text-2xl font-semibold">Lokasi Desa <span
+                class="text-black">{{ config('app.name') }}</span></h1>
         <p class="my-5 text-gray-500 lg:px-96">
             {{ $content->deskripsi_lokasi }}
         </p>
@@ -440,7 +447,7 @@
 
     <div class="flex justify-center">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7978.759985569857!2d122.90087848780126!3d0.8493064735045458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32794f76be888f7f%3A0x1a3123d14411b3b2!2sKantor%20Desa%20Katialada!5e0!3m2!1sen!2sid!4v1734709360554!5m2!1sen!2sid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29065.621012042582!2d122.63414570350814!3d0.6083543846493171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327919a38ef11033%3A0xc2b671aa1ef3b962!2sBumela%2C%20Boliyohuto%2C%20Gorontalo%20Regency%2C%20Gorontalo!5e0!3m2!1sen!2sid!4v1740635504335!5m2!1sen!2sid"
             style="border:0;" width="600" height="450" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>

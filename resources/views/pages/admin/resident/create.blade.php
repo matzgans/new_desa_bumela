@@ -112,7 +112,7 @@
                             <input
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
                                 id="nik" name="nik" type="number" value="{{ old('nik') }}"
-                                placeholder="NIK...." required />
+                                placeholder="NIK...." />
                             @error('nik')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
                             @enderror
@@ -125,7 +125,8 @@
                                 class="block w-full rounded-lg border border-secondary bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-secondary dark:border-secondary dark:bg-gray-700 dark:text-white"
                                 id="gender" name="gender" required>
                                 <option value="">Pilih Gender</option>
-                                <option value="Perempuan" {{ old('gender') == 'Perempuan' ? 'selected' : '' }}>Perempuan
+                                <option value="Perempuan" {{ old('gender') == 'Perempuan' ? 'selected' : '' }}>
+                                    Perempuan
                                 </option>
                                 <option value="Laki - Laki" {{ old('gender') == 'Laki - Laki' ? 'selected' : '' }}>
                                     Laki-laki
@@ -272,7 +273,7 @@
                                             800x400px)</p>
                                     </div>
                                     <input class="hidden" id="dropzone-file" name="photo_profile" type="file"
-                                        accept="image/*" onchange="previewImage(event)"/>
+                                        accept="image/*" onchange="previewImage(event)" />
 
 
                                     @error('photo_profile')

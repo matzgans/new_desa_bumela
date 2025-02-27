@@ -52,18 +52,18 @@ class StructureController extends Controller
                 'required',
                 'string',
                 'max:255',
-                // function ($attribute, $value, $fail) {
-                //     // Daftar posisi yang hanya boleh ada satu
-                //     $restrictedPositions = ['Sekretaris', 'Kepala Desa', 'Bendahara'];
+                function ($attribute, $value, $fail) {
+                    // Daftar posisi yang hanya boleh ada satu
+                    $restrictedPositions = ['Sekretaris', 'Kepala Desa', 'Bendahara'];
 
-                //     // Jika posisi adalah salah satu dari posisi yang dibatasi
-                //     if (in_array($value, $restrictedPositions)) {
-                //         // Periksa apakah posisi ini sudah ada di database
-                //         if (Structure::where('position', $value)->exists()) {
-                //             $fail("Posisi $value sudah ada dan tidak dapat ditambahkan lagi.");
-                //         }
-                //     }
-                // },
+                    // Jika posisi adalah salah satu dari posisi yang dibatasi
+                    if (in_array($value, $restrictedPositions)) {
+                        // Periksa apakah posisi ini sudah ada di database
+                        if (Structure::where('position', $value)->exists()) {
+                            $fail("Posisi $value sudah ada dan tidak dapat ditambahkan lagi.");
+                        }
+                    }
+                },
             ],
             // 'staff_photo' => 'required|image|mimes:jpg,jpeg,png|max:2048',
             'nip' => 'nullable|numeric|unique:residents,nik,' // Mendukung file PNG dengan maksimal ukuran 2MB

@@ -24,7 +24,7 @@ class LandingController extends Controller
     public function index()
     {
 
-      
+
         $galleries = Gallery::limit(8)->get();
         $articles = Article::where("is_show", "=", 1)->limit(4)->get();
         $currentVillageHead = Structure::where("position", "=", "Kepala Desa")->limit(1)->get();
@@ -39,8 +39,8 @@ class LandingController extends Controller
         $womanCount = Resident::where('gender', 'Perempuan')->count();
         $villageCount = Village::count();
 
-      
-      return view("pages.landing.index", compact(
+
+        return view("pages.landing.index", compact(
             "articles",
             "galleries",
             'kepala_desa',
@@ -63,7 +63,7 @@ class LandingController extends Controller
 
 
         $visionsMissions = VisionMision::all("visi", "misi");
-        $priorityPrograms = VillageProgram::where("program_category", "prioritas")->get();
+        $all_programs = VillageProgram::get();
 
 
 
@@ -72,7 +72,7 @@ class LandingController extends Controller
             'employees' => $employees,
             'formerVillageHeads' => $formerVillageHeads,
             "visionsMissions" =>  $visionsMissions,
-            "priorityPrograms" => $priorityPrograms,
+            "all_programs" => $all_programs,
 
         ]);
     }

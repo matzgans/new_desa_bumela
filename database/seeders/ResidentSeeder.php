@@ -20,7 +20,7 @@ class ResidentSeeder extends Seeder
         $education_levels = ['Tidak / Belum Sekolah', 'Tamat SD / Sederajat', 'Tamat SMP / Sederajat', 'Tamat SMA / Sederajat', "Tamat PT"];
         $occupations = ['Nelayan', 'Petani', 'Swasta', 'Honorer', 'PNS', 'Buruh Harian', 'Tukang Bangunan', "Asisten RT", "Lainnya"];
 
-        for ($i = 0; $i < 6; $i++) {
+        for ($i = 0; $i <= 2; $i++) {
             // Generate unique 16-digit NIK
             $nik = fake()->unique()->numerify('################');
 

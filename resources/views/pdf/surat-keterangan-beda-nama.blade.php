@@ -138,8 +138,8 @@
                     <tr>
                         <td style="padding-right: 50px">Alamat</td>
                         <td>:</td>
-                        <td>Desa Katialada Kecamatan Kwandang
-                            Kab. Gorontalo Utara </td>
+                        <td>Desa Bumela Kecamatan Bilato
+                            Kab. Gorontalo </td>
                     </tr>
 
                 </table>
@@ -162,7 +162,7 @@
                     <tr>
                         <td>Dikeluarkan di</td>
                         <td>:</td>
-                        <td>Katialada</td>
+                        <td>{{ config('app.name') }}</td>
                     </tr>
                     <tr>
                         <td>Pada Tanggal</td>
@@ -172,13 +172,13 @@
                 </table>
                 @if ($tandatangan === 'kades')
                     <div class="text-table">
-                        <p class="kepala-desa">Kepala Desa Katialada</p>
+                        <p class="kepala-desa">Kepala Desa {{ config('app.name') }}</p>
                         <p class="nama-kepala-desa">{{ ucfirst($kepala_desa) }}</p>
                         {{-- <p class="nip">NIP: {{ $nip }}</p> --}}
                     </div>
                 @else
                     <div class="text-table">
-                        <p class="kepala-desa">A.n Kepala Desa Katialada</p>
+                        <p class="kepala-desa">A.n Kepala Desa {{ config('app.name') }}</p>
                         <p class="nama-kepala-desa">{{ ucfirst($sekretaris_desa) }}</p>
                         {{-- <p class="nip">NIP: {{ $nip }}</p> --}}
                     </div>

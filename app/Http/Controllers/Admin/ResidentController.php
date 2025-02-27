@@ -58,11 +58,11 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-       // Validasi input
+        // Validasi input
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255|min:6',
             'village_id' => 'required|string|max:255',
-            'nik' => 'required|numeric|digits:16|unique:residents',
+            'nik' => 'nullable|numeric|digits:16|unique:residents',
             'gender' => 'required|in:Perempuan,Laki - Laki',
             'birth_date' => 'required|date',
             'occupation' => 'required|string|max:255|min:6',
@@ -115,7 +115,6 @@ class ResidentController extends Controller
 
         // Kembali ke halaman sebelumnya dengan pesan sukses
         return redirect()->back()->with('success', 'Data penduduk berhasil ditambahkan!');
-
     }
 
     /**
@@ -141,46 +140,49 @@ class ResidentController extends Controller
      */
     public function update(Request $request, $uuid)
     {
-        // Ambil data penduduk yang akan diperbarui berdasarkan UUID
+        // Ambil data penduduk berdasarkan UUID
         $resident = Resident::where('uuid', $uuid)->firstOrFail();
 
         // Validasi input
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255|min:6',
-            'nik' => 'required|numeric|digits:16|unique:residents,nik,' . $resident->id, // Perbaiki untuk keunikan pada update
+            'nik' => 'required|numeric|digits:16|unique:residents,nik,' . $resident->id,
             'village_id' => 'required|string|max:255',
             'gender' => 'required|in:Perempuan,Laki - Laki',
             'birth_date' => 'required|date',
             'occupation' => 'required|string|max:255',
             'education_level' => 'required|string|max:255',
             'status_resident' => 'required|string|max:255',
-            'photo_profile' => 'nullable|image|mimes:jpeg,jpg,png|max:2048', // Ganti 'required' menjadi 'nullable'
+            'photo_profile' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
-        // Jika validasi gagal, kembali dengan pesan kesalahan
+        // Jika validasi gagal, kembali dengan pesan error
         if ($validator->fails()) {
-            dd($validator);
             return redirect()->back()->with('error', 'Perhatikan Inputan Anda')->withErrors($validator)->withInput();
         }
 
         // Cek jika ada gambar baru yang diunggah
         if ($request->hasFile('photo_profile')) {
-            // Hapus gambar yang ada jika ada
-            $existingImagePath = public_path('residents/images/' . $resident->photo_profile);
-            if (file_exists($existingImagePath)) {
-                unlink($existingImagePath); // Hapus gambar yang ada
+            // Hapus gambar lama jika ada dan bukan direktori
+            if (!empty($resident->photo_profile)) {
+                $existingImagePath = public_path('residents/images/' . $resident->photo_profile);
+                if (file_exists($existingImagePath) && is_file($existingImagePath)) {
+                    unlink($existingImagePath);
+                }
             }
 
-            // Generate nama file baru untuk gambar
+            // Generate nama file baru
             $fileExtension = $request->file('photo_profile')->getClientOriginalExtension();
-            $fileName = Str::uuid()->toString() . '.' . $fileExtension; // Gunakan UUID untuk nama file baru
-            $request->file('photo_profile')->move(public_path('residents/images'), $fileName); // Simpan gambar ke folder
+            $fileName = Str::uuid()->toString() . '.' . $fileExtension;
 
-            // Perbarui foto profil di model
-            $resident->photo_profile = $fileName; // Simpan nama file gambar baru
+            // Simpan file ke folder
+            $request->file('photo_profile')->move(public_path('residents/images'), $fileName);
+
+            // Update nama file di database
+            $resident->photo_profile = $fileName;
         }
 
-        // Perbarui data penduduk lainnya
+        // Perbarui data lainnya
         $resident->update([
             'name' => $request->name,
             'nik' => $request->nik,
@@ -189,14 +191,12 @@ class ResidentController extends Controller
             'occupation' => $request->occupation,
             'education_level' => $request->education_level,
             'status_resident' => $request->status_resident,
+            'photo_profile' => $resident->photo_profile, // Pastikan ini diperbarui jika ada gambar baru
         ]);
 
-        // Simpan data ke database (opsional, karena update sudah otomatis menyimpan)
-        // $resident->save(); // Tidak perlu dipanggil karena update() sudah menyimpannya
-
-        // Kembali ke halaman sebelumnya dengan pesan sukses
         return redirect()->back()->with('success', 'Data penduduk berhasil diperbarui!');
     }
+
 
 
     /**
@@ -207,11 +207,16 @@ class ResidentController extends Controller
         // Temukan resident berdasarkan UUID
         $resident = Resident::where('uuid', $uuid)->first();
 
+        // Jika tidak ditemukan, kembalikan error
+        if (!$resident) {
+            return redirect()->back()->with('error', 'Data tidak ditemukan!');
+        }
+
         // Tentukan path gambar
         $photoPath = public_path('residents/images/' . $resident->photo_profile);
 
-        // Cek apakah file gambar ada
-        if (file_exists($photoPath)) {
+        // Cek apakah photo_profile tidak kosong dan file gambar ada
+        if (!empty($resident->photo_profile) && file_exists($photoPath) && is_file($photoPath)) {
             // Hapus gambar
             unlink($photoPath);
         }
@@ -222,6 +227,7 @@ class ResidentController extends Controller
         // Redirect kembali dengan pesan sukses
         return redirect()->back()->with('success', 'Data berhasil dihapus!');
     }
+
 
     public function export_template()
     {
