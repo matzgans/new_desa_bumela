@@ -91,8 +91,8 @@
                     class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
                     <div href="#">
                         <img class="h-96 w-full rounded-t-lg object-cover"
-                            src="{{ asset('structure/staff_profile/' . $currentVillageHead->staff_photo) }}"
-                            alt="" />
+                            src="{{ asset($currentVillageHead->staff_photo === 'kepala-desa.png' ? 'landing/images/kepala-desa.png' : 'structure/staff_profile/' . $currentVillageHead->staff_photo) }}"
+                            alt="Foto Aparat Desa" />
                     </div>
                     <div class="p-5">
                         <div href="#">
@@ -110,7 +110,8 @@
         <div class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
             <div href="#">
                 <img class="h-96 w-full rounded-t-lg object-cover"
-                    src="{{ asset('structure/staff_profile/' . $employee->staff_photo) }}" alt="" />
+                    src="{{ asset($employee->staff_photo === 'kepala-desa.png' ? 'landing/images/kepala-desa.png' : 'structure/staff_profile/' . $employee->staff_photo) }}"
+                    alt="Foto Aparat Desa" />
             </div>
             <div class="p-5">
                 <div href="#">
@@ -146,8 +147,8 @@
                     class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
                     <div href="#">
                         <img class="h-96 w-full rounded-t-lg object-cover"
-                            src="{{ asset('structure/staff_profile/' . $formerVillageHead->staff_photo) }}"
-                            alt="" />
+                            src="{{ asset($formerVillageHead->staff_photo === 'kepala-desa.png' ? 'landing/images/kepala-desa.png' : 'structure/staff_profile/' . $formerVillageHead->staff_photo) }}"
+                            alt="Foto Aparat Desa" />
                     </div>
                     <div class="p-5">
                         <div href="#">

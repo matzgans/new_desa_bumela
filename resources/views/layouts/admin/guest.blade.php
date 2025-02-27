@@ -9,7 +9,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net" rel="preconnect">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
@@ -20,9 +20,9 @@
     <div class="flex min-h-screen">
         <!-- Left Side -->
         <div class="flex w-1/2 items-center justify-center bg-primary p-8 text-white max-md:hidden">
-            <div class="text-left">
+            <div class="text-center">
                 <h1 class="text-7xl font-bold">Selamat Datang Di Website Resmi Desa <span class="text-yellow-500">
-                        Katialada</span></h1>
+                        {{ config('app.name') }}</span></h1>
             </div>
         </div>
 

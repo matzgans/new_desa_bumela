@@ -265,9 +265,8 @@
     <div class="mt-16 text-center" data-aos="zoom-in">
         <h1 class="text-darken text-2xl font-semibold">SOTK</h1>
         <p class="my-5 text-gray-500 lg:px-96">
-            Struktur Organisasi dan Tata Kerja Pemerintah Desa {{ config('app.name') }} kecamatan Kwandang, Kabupaten
-            Gorontalo Utara
-            Utara, Gorontalo, Indonesia.
+            Struktur Organisasi dan Tata Kerja Pemerintah Desa {{ config('app.name') }} kecamatan Bilato, Kabupaten
+            Gorontalo Utara, Gorontalo, Indonesia.
         </p>
 
         <!-- Card Wrapper -->
@@ -295,7 +294,8 @@
                 <div
                     class="max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
                     <img class="h-96 w-full rounded-t-lg object-cover"
-                        src="{{ asset('structure/staff_profile/' . $employee->staff_photo) }}" alt="" />
+                        src="{{ asset($employee->staff_photo === 'kepala-desa.png' ? 'landing/images/kepala-desa.png' : 'structure/staff_profile/' . $employee->staff_photo) }}"
+                        alt="Foto Aparat Desa" />
                     <div class="p-5">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {{ $employee->staff_name }}
