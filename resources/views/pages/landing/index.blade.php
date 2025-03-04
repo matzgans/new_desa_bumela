@@ -107,7 +107,7 @@
         <div class="mx-auto max-w-4xl">
             <h1 class="mb-3 text-center font-medium text-gray-400">Bekerja Sama Dengan</h1>
             <div class="flex justify-center gap-20 overflow-auto pt-10">
-                <img class="h-32" src="{{ asset('landing/images/logo-gorut.png') }}">
+                <img class="h-32" src="{{ asset('landing/images/logo-kabgor.png') }}">
             </div>
         </div>
     </div>
@@ -266,7 +266,7 @@
         <h1 class="text-darken text-2xl font-semibold">SOTK</h1>
         <p class="my-5 text-gray-500 lg:px-96">
             Struktur Organisasi dan Tata Kerja Pemerintah Desa {{ config('app.name') }} kecamatan Bilato, Kabupaten
-            Gorontalo Utara, Gorontalo, Indonesia.
+            Gorontalo, Provinsi Gorontalo, Indonesia.
         </p>
 
         <!-- Card Wrapper -->
